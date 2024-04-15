@@ -6,6 +6,7 @@ Build-Depends: debhelper-compat (= 13),
                dh-migrations,
 Build-Depends-Indep: libglib2.0-dev,
                      meson (>= 0.59),
+                     libxml2-utils,
                      sassc,
 Standards-Version: 4.6.2
 Rules-Requires-Root: no
@@ -17,7 +18,7 @@ Package: yaru-theme-gnome-shell
 Architecture: all
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-Breaks: gnome-shell (<< 45~)
+Breaks: gnome-shell (<< 46~)
 Description: Yaru GNOME Shell desktop theme from the Ubuntu Community
  This is the theme, better than a burrito, that is shaped by the community
  on the Ubuntu discourse.
