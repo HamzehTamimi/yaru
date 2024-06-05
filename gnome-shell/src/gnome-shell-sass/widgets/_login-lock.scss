@@ -108,6 +108,11 @@ $_gdm_dialog_width: 25em;
   text-align: center;
 }
 
+.login-dialog-message-hint, .login-dialog-message {
+  color: darken($_gdm_fg, 10%);
+  min-height: 2.75em;
+}
+
 .login-dialog-user-selection-box {
   // padding to ensure the box doesn't overlap the panel
   padding-top: 4em;
@@ -196,7 +201,6 @@ $_gdm_dialog_width: 25em;
       }
 
       &:logged-in {
-        // color border for logged-in user
         .user-icon {
           border-color: $selected_bg_color;
           StIcon {
@@ -224,32 +228,32 @@ $_gdm_dialog_width: 25em;
 }
 
 .web-login-spinner {
-  background-color: rgba(0, 0, 0, 0.5);
-  border: 5px rgba(0, 0, 0, 0.0);
+  color: $osd_fg_color;
+  background-color: transparentize($osd_bg_color, 0.5);
+  border: 5px transparent;
   border-radius: 50px;
 }
 
 .web-login-title-label {
   @include fontsize($base_font_size);
-  color: darken($_gdm_fg, 30%);
+  color: if($variant =='dark', darken($fg_color, 30%), lighten($fg_color, 20%));
 }
 
 .web-login-url-label {
   @include fontsize($base_font_size);
   @extend %monospace;
-  color: $_gdm_fg;
+  color: $fg_color;
   text-align: center;
 }
 
 .web-login-code-title-label {
   @include fontsize($base_font_size);
-  @include fontsize($base_font_size);
-  color: $_gdm_fg;
+  color: $fg_color;
 }
 
 .web-login-code-label {
   @include fontsize($base_font_size);
-  color: $_gdm_fg;
+  color: $fg_color;
   font-weight: bold;
 }
 
@@ -264,7 +268,7 @@ $_gdm_dialog_width: 25em;
 
 .web-login-intro-button-label {
   @include fontsize($base_font_size + 5);
-  color: $_gdm_fg;
+  color: $fg_color;
   height: 3em;
   text-align: center;
   font-weight: bold;
@@ -272,7 +276,7 @@ $_gdm_dialog_width: 25em;
 
 .web-login-intro-button {
   @include fontsize($base_font_size);
-  color: $_gdm_fg;
+  color: $fg_color;
   height: 3em;
   text-align: center;
   border-radius: $base_border_radius * 4;
@@ -503,8 +507,16 @@ $_gdm_dialog_width: 25em;
 
 // QR Code
 .qr-code {
-  background: black;
+  @if ($variant == 'light') {
+    $qrcode_bg_color: mix($fg_color, $bg_color, 8%);
+    background-color: $qrcode_bg_color;
+    border-color: $qrcode_bg_color;
+    color: $fg_color;
+  } @else {
+    background-color: $_gdm_fg;
+    border-color: $_gdm_fg;
+    color: $_gdm_bg;
+  }
   border-radius: $base_border_radius * .5;
-  border-color: white;
   border-width: 1em;
 }

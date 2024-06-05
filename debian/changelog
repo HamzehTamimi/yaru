@@ -1,3 +1,64 @@
+yaru-theme (24.04.3-0ubuntu1) oracular; urgency=medium
+
+  [ Thomas Staudinger ]
+  * gtksourceview: Add support for new libgedit-gtksourceview xml scheme
+    The `kind` attribute is now mandatory, `version` and `underline-color`
+    removed
+
+  [ Marco Trevisan (Treviño) ]
+  * gnome-shell/login-lock: Fix QRCode dialog colors when using light theme
+    (LP: #2067661)
+  * gnome-shell/login-lock: Use proper background qrcode colors in light mode
+    (LP: #2067661)
+  * gnome-shell: Use ubuntu mono for monospace
+  * gnome-shell: Sync fixes from gnome-46 branch:
+      https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/7488
+      https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/7400
+      https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/6024
+      https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/7628
+      https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/7511
+      https://gitlab.gnome.org/GNOME/gnome-shell-extensions/-/issues/507
+      https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/7620
+
+ -- Marco Trevisan (Treviño) <marco@ubuntu.com>  Wed, 05 Jun 2024 02:16:01 +0200
+
+yaru-theme (24.04.2-0ubuntu1) noble; urgency=medium
+
+  * calendar: Use the same border radius we use for quicksettings
+    (LP: #2062388)
+  * gnome-shell/dock: Tune the icon selection colors (LP: #2061729)
+  * gnome-shell: Use our dash color as the system overlay bg color
+    (LP: #2062121)
+
+ -- Marco Trevisan (Treviño) <marco@ubuntu.com>  Thu, 18 Apr 2024 19:06:05 +0200
+
+yaru-theme (24.04.1-0ubuntu1) noble; urgency=medium
+
+  [ Muqtadir ]
+  * Sync with `org.gnome.Settings` symbolic icons changes
+  * add org.gnome.Nautilus* symbolic icons and revert app-grid icon
+    (LP: #2062046)
+
+  [ Muqtxdir ]
+  * add @ubuntujaggers refined app-center fullcolor icon (no visual changes)
+
+  [ Marco Trevisan (Treviño) ]
+  * gtk/common: Sync with upstream fixes
+  * icons: Remove start-here-symbolic symlink that was breaking view-app-grid.
+  * icons: Add view-app-grid-ubuntu-symbolic symlink to start-here
+    (LP: #2060816).
+  * gnome-shell/dock: Use more visible background on highlighted icons
+    (LP: #2061729)
+  * gnome-shell/dock: Draw focused icons with highlight background
+    (LP: #2062044)
+  * icons: Re-render icons and regenerate symlinks
+  * debian/control: Add Breaks on ubuntu-dock << 90~
+    It doesn't really break it but if we'd release this version of the icon
+    theme before of the new dock, we'd end up changing the dock's show-apps
+    icon, breaking the UI freeze (related to lp:2060816).
+
+ -- Marco Trevisan (Treviño) <marco@ubuntu.com>  Wed, 17 Apr 2024 21:44:55 +0200
+
 yaru-theme (24.04.0-0ubuntu1) noble; urgency=medium
 
   [ Paul Kepinski ]
